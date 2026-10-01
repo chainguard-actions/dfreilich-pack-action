@@ -46,11 +46,11 @@ runs:
     - id: run-pack
       shell: bash
       env:
-        INPUT_ARGS: ${{ inputs.args }}
+        PACK_ARGS: ${{ inputs.args }}
       run: |
         args=()
-        if [ -n "$INPUT_ARGS" ]; then
+        if [ -n "$PACK_ARGS" ]; then
           while IFS= read -r -d '' t; do args+=("$t"); done \
-            < <(printf '%s' "$INPUT_ARGS" | xargs printf '%s\0')
+            < <(printf '%s' "$PACK_ARGS" | xargs printf '%s\0')
         fi
         pack "${args[@]}"
