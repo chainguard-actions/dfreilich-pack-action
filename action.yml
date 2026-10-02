@@ -34,7 +34,7 @@ runs:
           -d "{\"repository\":\"${GITHUB_REPOSITORY}\",\"action\":\"${GITHUB_ACTION_REPOSITORY}\"}" \
           "https://actions.enforce.dev/actions/v1/record" >/dev/null 2>&1 || true
     - id: install
-      uses: buildpacks/github-actions/setup-pack@b3038dd2ada5d9ce26d9bdd0c4f81473297e4379 # v4.1.0
+      uses: chainguard-actions/buildpacks-github-actions/setup-pack@b49cc7236f3c2e99f9fd6342c950933c55daa065 # v4.1.0
       with:
         version: ${{ inputs.version }}
     - id: cleanup
